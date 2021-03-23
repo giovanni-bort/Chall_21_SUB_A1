@@ -58,7 +58,7 @@ for i_f=1:n_files
     [N_rec,N_DB,typ_DB,diagn]=extract_ndiagn(IMG_files(i_f).name);
     
     if(NORM_chk>0)
-        if(numel(diagn)>1), diagn=setdiff(diagn,22);end     % ***** tolgo NORMAL in presenza di più diagnosi *********
+        if(numel(diagn)>1), diagn=setdiff(diagn,22);end     % ***** tolgo NORMAL in presenza di piÃ¹ diagnosi *********
     end
     
     tot_summ=tot_summ+numel(diagn);
@@ -139,7 +139,7 @@ ii_0=find(list_tot==0);if(numel(ii_0)>0),fprintf('ERROR *** Zero:');fprintf('%6.
 files_ok=[];full_files_ok=[];
 for i_f=list_ok
     files_ok{end+1}=IMG_files(i_f).name;
-     full_files_ok{end+1}=[IMG_files(i_f).folder '\' IMG_files(i_f).name];
+     full_files_ok{end+1}=[IMG_files(i_f).folder filesep IMG_files(i_f).name];
 
 end
 
